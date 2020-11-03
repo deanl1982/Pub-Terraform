@@ -13,12 +13,6 @@ terraform {
   }
 }
 
-# Create Resource Group - This will host all subsequent deployed resources
-#resource "azurerm_resource_group" "default" {
-#  name     = var.rgname
-#  location = var.region
-#}
-
 # Create "Pooled" WVD Host Pool
 resource "azurerm_virtual_desktop_host_pool" "pooleddepthfirst" {
   location            = var.region
