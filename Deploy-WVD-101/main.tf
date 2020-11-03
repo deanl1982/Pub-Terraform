@@ -19,7 +19,7 @@ resource "azurerm_virtual_desktop_host_pool" "pooleddepthfirst" {
   friendly_name            = var.pooledhpfriendlyname
   description              = var.pooledhpdescription
   type                     = "Pooled"
-  maximum_sessions_allowed = 50
+  maximum_sessions_allowed = 25
   load_balancer_type       = "DepthFirst"
 }
 
