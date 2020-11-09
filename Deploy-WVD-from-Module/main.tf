@@ -13,20 +13,27 @@ terraform {
   }
 }
 
+
+# Create resource group
+resource "azurerm_resource_group" "default" {
+name     = "VFF-USE-RG-WVD-Module"
+location = "West US 2"
+}
+
 module "WVD-as-a-Module" {
   source                         = "../Modules/WVD-as-a-Module"
   rgname                         = "VFF-USE-RG-WVD-Module"
   region                         = "West US 2"
-  pooledhpname                   = "VFF-WUS-TFRM-Module"
+  pooledhpname                   = "VFF-WUS-TFRM-Mod"
   pooledhpfriendlyname           = "VFF Pooled Host Pool"
   pooledhpdescription            = "VFF Pooled Host Pool"
-  pooledhpremoteappname          = "VFF-WUS-TFRM-Module-RA"
+  pooledhpremoteappname          = "VFF-WUS-TFRM-Mod-RA"
   pooledhpremoteappfriendlyname  = "VFF Pooled Host Pool Remote Apps"
-  ooledhpremoteappdescription    = "VFF Pooled Host Pool Remote Apps"
-  pooledhpdesktopappname         = "VFF-WUS-TFRM-Module-DT"
+  pooledhpremoteappdescription   = "VFF Pooled Host Pool Remote Apps"
+  pooledhpdesktopappname         = "VFF-WUS-TFRM-Mod-DT"
   pooledhpdesktopappfriendlyname = "VFF Pooled Host Pool Remote Apps"
   pooledhpdesktopappdescription  = "VFF Pooled Host Pool Remote Apps"
-  workspace                      = "VFF-Terraform-Workspace-Module"
+  workspace                      = "VFF-Terraform-Wkspc-Mod"
   workspacefriendlyname          = "VFF-Terraform-Workspace"
   workspacedesc                  = "VFF-Terraform-Workspace"
   pooledhpmaxsessions            = 50
