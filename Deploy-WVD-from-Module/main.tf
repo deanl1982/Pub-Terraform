@@ -15,14 +15,14 @@ terraform {
 
 
 # Create resource group
-resource "azurerm_resource_group" "default" {
-name     = "VFF-USE-RG-WVD-Module"
-location = "West US 2"
-}
+#resource "azurerm_resource_group" "default" {
+#name     = "VFF-USE-RG-WVD-FromMod"
+#location = "West US 2"
+#}
 
 module "WVD-as-a-Module" {
   source                         = "../Modules/WVD-as-a-Module"
-  rgname                         = "VFF-USE-RG-WVD-Module"
+  rgname                         = "VFF-USE-RG-WVD-TFMOD"
   region                         = "West US 2"
   pooledhpname                   = "VFF-WUS-TFRM-Mod"
   pooledhpfriendlyname           = "VFF Pooled Host Pool"
