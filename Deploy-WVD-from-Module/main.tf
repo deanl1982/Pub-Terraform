@@ -6,24 +6,23 @@ provider "azurerm" {
 
 terraform {
   backend "azurerm" {
-    storage_account_name = "vffwvdtfstate"
+    storage_account_name = "vfftfstateusw2"
     container_name       = "tfstate"
     key                  = "terraform.tfstate"
     resource_group_name  = "VFF-USE-RG-WVD-REMOTE"
   }
 }
 
-
 # Create resource group
-#resource "azurerm_resource_group" "default" {
-#name     = "VFF-USE-RG-WVD-FromMod"
-#location = "West US 2"
-#}
+resource "azurerm_resource_group" "default" {
+name     = "VFF-USW-RG-WVD-FromMod"
+location = "West US 2"
+}
 
 module "WVD-as-a-Module" {
   source                         = "../Modules/WVD-as-a-Module"
-  rgname                         = "VFF-USE-RG-WVD-TFMOD"
-  region                         = "West US 2"
+  rgname                         = azurerm_resource_group.default.name
+  region                         = azurerm_resource_group.default.location
   pooledhpname                   = "VFF-WUS-TFRM-Mod"
   pooledhpfriendlyname           = "VFF Pooled Host Pool"
   pooledhpdescription            = "VFF Pooled Host Pool"
