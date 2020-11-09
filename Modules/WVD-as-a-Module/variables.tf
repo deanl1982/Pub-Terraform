@@ -1,69 +1,74 @@
 variable "rgname" {
   description = "Resource Group Name"
-  default     = "VFF-USE-RG-WVD-REMOTE"
+  type        = string
 }
 
 variable "region" {
   description = "Region"
-  default     = "West US 2"
+  type        = string
 }
 
 variable "pooledhpname" {
   description = "Pooled Host Pool Name"
-  default     = "VFF-WUS-TFRM-Pooled"
+  type        = string
+}
+
+variable "pooledhpmaxsessions" {
+  description = "Max sessions per pooled host"
+  type        = number
 }
 
 variable "pooledhpfriendlyname" {
   description = "Pooled Host Pool Friendly Name"
-  default     = "VFF Pooled Host Pool"
+  type        = string
 }
 
 variable "pooledhpdescription" {
   description = "Pooled Host Pool Description"
-  default     = "VFF Pooled Host Pool"
+  type        = string
 }
 
 variable "pooledhpremoteappname" {
   description = "Pooled Host Pool RemoteApp App Group Name"
-  default     = "VFF-WUS-TFRM-Pooled-RA"
+  type        = string
 }
 
 variable "pooledhpremoteappfriendlyname" {
   description = "Pooled Host Pool RemoteApp App Group Friendly Name"
-  default     = "VFF Pooled Host Pool Remote Apps"
+  type        = string
 }
 
 variable "pooledhpremoteappdescription" {
   description = "Pooled Host Pool RemoteApp App Group Description"
-  default     = "VFF Pooled Host Pool Remote Apps"
+  type        = string
 }
 
 variable "pooledhpdesktopappname" {
   description = "Pooled Host Pool Desktop App Group Friendly Name"
-  default     = "VFF-WUS-TFRM-Pooled-DT"
+  type        = string
 }
 
 variable "pooledhpdesktopappfriendlyname" {
   description = "Pooled Host Pool Desktop App Group Friendly Name"
-  default     = "VFF Pooled Host Pool Remote Apps"
+  type        = string
 }
 
 variable "pooledhpdesktopappdescription" {
   description = "Pooled Host Pool Desktop App Group Description"
-  default     = "VFF Pooled Host Pool Remote Apps"
+  type        = string
 }
 
 variable "workspace" {
   description = "WVD Workspace Name"
-  default     = "VFF-Terraform-Workspace"
+  type        = string
 }
 
 variable "workspacefriendlyname" {
   description = "WVD Workspace Friendly Name"
-  default     = "VFF-Terraform-Workspace"
+  type        = string
 }
 
 variable "workspacedesc" {
   description = "WVD Workspace Description"
-  default     = "VFF-Terraform-Workspace"
+  type        = string
 }
